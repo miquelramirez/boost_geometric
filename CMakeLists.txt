@@ -12,5 +12,12 @@ find_package(Boost COMPONENTS  system  filesystem REQUIRED)
 LIST(APPEND LINK_LIBS
         ${Boost_LIBRARIES})
 
-add_executable(boost_geometric main.cpp)
-target_link_libraries(boost_geometric ${LINK_LIBS})
+add_executable(bg_quickstart main_quickstart.cxx)
+target_link_libraries(bg_quickstart ${LINK_LIBS})
+
+add_executable(bg_point_query main_point_query.cxx)
+target_link_libraries(bg_point_query ${LINK_LIBS})
+
+# 3D queries are not implemented in boost 1.68
+#add_executable(bg_3d_point_query main_3d_point_query.cxx)
+#target_link_libraries(bg_3d_point_query ${LINK_LIBS})
